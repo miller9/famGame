@@ -1,1 +1,8 @@
-<h1> This is the famGame index page" </h1>
+<h1> This is the famGame index page </h1>
+<% @words.each do |word| %>
+	<div class="word_wrapper">
+		<h2 class="category"> <%= link_to word.category, word %> </h2>
+		<h2 class="title"> <%= link_to word.title, word %> </h2>
+		<p class="date"> <%= time_ago_in_words(word.created_at) %> </p>
+	</div>
+<% end %>
