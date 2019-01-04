@@ -1,1 +1,32 @@
 <h1> Enter your own word! </h1>
+
+	<%= form_for :word, url: words_path do |f| %>
+		<!-- Block to handle errors while saving posts -->
+		<% if @word.errors.any? %>
+			<div id="errors">
+				<h2><%= pluralize(@word.errors.count, "error") %> stopped this word from saving </h2>
+				<ul>
+					<% @word.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+	
+		<p>
+			<%= f.label :category %> <br>
+			<%= f.text_field :category %>		
+		</p>
+
+		<p>
+			<%= f.label :word %> <br>
+			<%= f.text_field :title %>		
+		</p>
+
+		<p>
+			<%= f.submit %>
+		</p>
+
+	<% end %>
+
+
