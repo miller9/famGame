@@ -20,6 +20,12 @@ class WordsController < ApplicationController
 
 	def show
 		@word = Word.find(params[:id])
+		@random_number = Random.rand(100)
+	end
+
+	def random_word
+		@random_number = Random.rand(999)
+
 	end
 
 
