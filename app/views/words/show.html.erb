@@ -1,0 +1,15 @@
+<div id="word_content">	
+	<h1 class="title">
+		<%= @word.category %>
+		<%= @random_number %>
+	</h1>
+
+	<p class="date">
+		Submitted <%= time_ago_in_words(@word.created_at) %> ago |
+		<%= link_to 'Edit', edit_word_path(@word) %>
+	</p>
+
+	<p class="body">
+		<%= @word.title %>
+	</p>
+</div>
